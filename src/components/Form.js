@@ -1,21 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 class Form extends React.Component{
 
-    static propTypes = {
-        
-    };
-
-    state = {
-
-    };
-
     render(){
         return(
-            <div>
-                Form !
-            </div>
+        <div>
+            <form>
+                <input name="name" id="name" placeholder="Enter name" /> <br/>
+                <input name="phone" id="phone" placeholder="Enter phone" /> <br/>
+                <button className={"addBtn"} >Add</button>
+            </form>
+        </div>
         )
     }
 

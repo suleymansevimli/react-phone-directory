@@ -1,0 +1,62 @@
+input{
+    margin-top:15px;
+    width: 500px;
+    height: 50px;
+    line-height:50px;
+    text-indent: 10px;
+}
+
+.listArea{
+    margin:0 auto;
+    width: 500px;
+}
+
+.list{
+    margin-top:10px;
+    border:1px solid #ddd;
+    padding:15px;
+}
+
+.list li{
+    margin-top:5px;
+    padding:5px;
+    padding-bottom: 5px;
+    background: #ddd;
+    border: 1px solid #5e5e5e
+}
+
+.list li span{
+    display: block;
+}
+
+.list li span.name{
+    float: left;
+}
+
+.list li span.phone{
+    float: right;
+}
+
+.clearfix{
+    clear:both;
+}
+
+.addBtn{
+    width: 100px;
+    margin-top:10px;
+    background: sandybrown;
+    border:1px solid #ddd;
+    padding: 10px;
+    color:#fff;
+    cursor: pointer;
+}
+
+#name{
+    height: 40px;
+    line-height: 40px;
+}
+
+#phone{
+    height: 40px;
+    line-height: 40px;
+}
