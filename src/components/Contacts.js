@@ -1,35 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import List from './List';
+import Form from './Form';
 
 
-class Contacts extends React.Component{
 
-    state = {
-        contacts : [
-        {
-            name: 'Test Name 1',
-            phone : '12312313'
-        },
-        {
-            name: 'Test Name 2',
-            phone : '9876554133'
-        },
-        {
-            name: 'Test Name 3',
-            phone : '456413441231'
-        },
-    ]
-    };
-
-    render(){
-        return(
+const Contacts= (props) => 
             <div>
                 <h1>Telefon Rehberi</h1>
-               <List contacts={this.state.contacts}/>
+               <List contacts={props.contacts}/>
+                <Form addContact={props.addContact}/>
             </div>
-        )
-    }
 
-}
+
+Contacts.propTypes = {
+    contacts : PropTypes.array.isRequired,
+    addContact : PropTypes.func
+};
 
 export default Contacts;

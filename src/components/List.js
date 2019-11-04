@@ -9,16 +9,36 @@ class List extends React.Component{
     };
 
     state = {
+        filterText : ''
+    };
 
+
+    onChangeFilterText = (e) => {
+        this.setState({
+            filterText : e.target.value
+        })
+
+        console.log(this.state.filterText)
     };
 
     render(){
+
+
+        const filteredContacts = this.props.contacts.filter(
+            (contact )=> {
+                return contact.name.toLowerCase().indexOf(
+                    this.state.filterText.toLocaleLowerCase()
+                ) !== -1
+            }
+        );
+
+
         return(
             <div className={"listArea"}>
-                <input name={"filter"} id={"filter"} placeholder={'Filter phone or name'}/>
+                <input value={this.state.filterText} onChange={this.onChangeFilterText}  name={"filter"} id={"filter"} placeholder={'Filter phone or name'}/>
                 <ul className={"list"} >
                     {
-                        this.props.contacts.map(contact => {
+                        filteredContacts.map(contact => {
                             return <li key={contact.phone}> 
                             <span className={"name"}> {contact.name} </span>
                             <span className={"phone"}> {contact.phone}  </span>
