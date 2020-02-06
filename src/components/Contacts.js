@@ -5,12 +5,12 @@ import Form from './Form';
 
 
 
-const Contacts= (props) => 
-            <div>
-                <h1>Telefon Rehberi</h1>
-               <List contacts={props.contacts}/>
-                <Form addContact={props.addContact}/>
-            </div>
+const Contacts = (props) =>
+    <div>
+        <h1>Directory</h1>
+        <List contacts={props.contacts} />
+        <Form contacts={props.contacts} addContact={props.addContact} />
+    </div>
 
 
 Contacts.propTypes = {
