@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Contact from "./Contacts";
+import { useSelector, useDispatch } from "react-redux";
+import { addContact } from "../store/reducers/crudReducer";
 
 const App = () => {
-
-  const [contacts, setContact] = useState([
-    { name: "Joe Doe", phone: "1234567890" },
-    { name: "Micheal Jordan", phone: "0987654321" },
-    { name: "Nicola Tesla", phone: "1122334455" }
-  ]);
+  const contacts = useSelector(state => state.crud.contacts);
+  const dispatch = useDispatch();
 
   const [count, counter] = useState(1);
 
@@ -16,8 +14,8 @@ const App = () => {
     document.title = `Click counter ${count}`;
   });
 
-  const addContact = contact => {
-    setContact(contact);
+  const addContactHandler = contact => {
+    dispatch(addContact(contact));
   };
 
   const counterUp = () => {
@@ -30,7 +28,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Contact addContact={addContact} contacts={contacts} />
+      <Contact addContact={addContactHandler} contacts={contacts} />
 
       <div style={styles.counterWrapper}>
         <p style={styles.count}>{count}</p>
