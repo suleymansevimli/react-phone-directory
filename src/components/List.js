@@ -30,9 +30,23 @@ const List = props => {
       <ul className={"list"}>
         {filteredContacts.map((contact, i) => {
           return (
-            <li key={i} onClick={() => dispatch(deleteContact(contact.id))}>
+            <li key={i}>
               <span className={"name"}> {contact.id} - &nbsp;</span>
               <span className={"name"}> {contact.name} </span>
+              <span
+                onClick={() => dispatch(deleteContact(contact.id))}
+                className={"phone"}
+                style={{
+                  backgroundColor: "orange",
+                  color: "#fff",
+                  padding: 5,
+                  borderRadius: "15%",
+                  cursor: "pointer",
+                  marginLeft: 15
+                }}
+              >
+                Delete
+              </span>
               <span className={"phone"}> {contact.phone} </span>
               <span className={"clearfix"}></span>
             </li>
